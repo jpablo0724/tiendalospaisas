@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registro · Tienda Los Paisas</title>
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth">
+  <aside class="hero">
+    <div class="hero-inner">
+      <div class="logo">Los Paisas</div>
+      <h2>Aprende, crece y vende más.</h2>
+      <p>Tu academia de la Tienda Los Paisas: cursos, lecciones y todo tu progreso en un solo lugar.</p>
+      <ul>
+        <li>Cursos prácticos para tu negocio</li>
+        <li>Avanza a tu ritmo, desde cualquier dispositivo</li>
+        <li>Certificados al completar cada ruta</li>
+      </ul>
+    </div>
+  </aside>
+  <main class="panel">
+    <div class="form-wrap">
+      <h1 class="brand">Academia <span>Los Paisas</span></h1>
+      <h2 class="title">Crea tu cuenta</h2>
+      <p class="sub">Empieza en menos de un minuto.</p>
+      
+        
+      
+      
+<form onsubmit="event.preventDefault();alert('Vista previa: el formulario aún no está conectado.');this.querySelector('button[type=submit]').disabled=false;this.querySelector('button[type=submit]').classList.remove('loading')">
+  <div class="field">
+    <label for="nombre">Nombre completo</label>
+    <input id="nombre" type="text" name="nombre" required autofocus autocomplete="name" placeholder="Tu nombre">
+  </div>
+  <div class="field">
+    <label for="email">Correo electrónico</label>
+    <input id="email" type="email" name="email" required autocomplete="email" placeholder="tu@correo.com">
+  </div>
+  <div class="field">
+    <label for="password">Contraseña <small>(mín. 8 caracteres)</small></label>
+    <div class="pw">
+      <input id="password" type="password" name="password" required minlength="8" autocomplete="new-password">
+      <button type="button" class="toggle" data-toggle="password" aria-pressed="false">Mostrar</button>
+    </div>
+  </div>
+  <div class="field">
+    <label for="confirmar">Confirmar contraseña</label>
+    <div class="pw">
+      <input id="confirmar" type="password" name="confirmar" required minlength="8" autocomplete="new-password">
+      <button type="button" class="toggle" data-toggle="confirmar" aria-pressed="false">Mostrar</button>
+    </div>
+  </div>
+  <button type="submit" class="btn">Crear cuenta</button>
+</form>
+<p class="alt">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+
+    </div>
+  </main>
+  <script>
+    document.querySelectorAll('[data-toggle]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var i = document.getElementById(b.dataset.toggle);
+        var show = i.type === 'password';
+        i.type = show ? 'text' : 'password';
+        b.textContent = show ? 'Ocultar' : 'Mostrar';
+        b.setAttribute('aria-pressed', show);
+      });
+    });
+    document.querySelectorAll('form').forEach(function (f) {
+      f.addEventListener('submit', function () {
+        var s = f.querySelector('button[type=submit]');
+        if (s) { s.disabled = true; s.classList.add('loading'); }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Academia{% endblock %} · Tienda Los Paisas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}">
+</head>
+<body class="auth">
+  <aside class="hero">
+    <div class="hero-inner">
+      <div class="logo">Los Paisas</div>
+      <h2>Aprende, crece y vende más.</h2>
+      <p>Tu academia de la Tienda Los Paisas: cursos, lecciones y todo tu progreso en un solo lugar.</p>
+      <ul>
+        <li>Cursos prácticos para tu negocio</li>
+        <li>Avanza a tu ritmo, desde cualquier dispositivo</li>
+        <li>Certificados al completar cada ruta</li>
+      </ul>
+    </div>
+  </aside>
+  <main class="panel">
+    <div class="form-wrap">
+      <h1 class="brand">Academia <span>Los Paisas</span></h1>
+      <h2 class="title">{% block heading %}{% endblock %}</h2>
+      <p class="sub">{% block sub %}{% endblock %}</p>
+      {% with msgs = get_flashed_messages(with_categories=true) %}
+        {% for cat, msg in msgs %}<div class="flash {{ cat }}" role="alert">{{ msg }}</div>{% endfor %}
+      {% endwith %}
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+  <script>
+    document.querySelectorAll('[data-toggle]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var i = document.getElementById(b.dataset.toggle);
+        var show = i.type === 'password';
+        i.type = show ? 'text' : 'password';
+        b.textContent = show ? 'Ocultar' : 'Mostrar';
+        b.setAttribute('aria-pressed', show);
+      });
+    });
+    document.querySelectorAll('form').forEach(function (f) {
+      f.addEventListener('submit', function () {
+        var s = f.querySelector('button[type=submit]');
+        if (s) { s.disabled = true; s.classList.add('loading'); }
+      });
+    });
+  </script>
+</body>
+</html>
