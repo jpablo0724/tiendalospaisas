@@ -1,25 +1,34 @@
-/* Sistema de diseño compartido: colores, escala tipográfica (1.25), espaciado (base 8) y radios. */
+/*
+  Sistema de diseño · Academia Los Paisas
+  Regla de color: neutros para todo; el amarillo de marca solo como acento puntual
+  (indicador activo y detalle del panel de marca). Rojo/verde únicamente para estados.
+*/
 :root{
-  --yellow:#ffd500;--yellow-h:#ffe34d;--blue:#1f4fd8;--red:#e3171e;--orange:#d9651b;
-  --bg:#000;--surface:#0e0e0e;--field:#171717;--line:#2a2a2a;
-  --text:#fff;--text-2:#d4d4d4;--muted:#a3a3a3;
+  /* Neutros */
+  --ink:#0f0f10;--ink-2:#3d3d40;--ink-3:#6e6e73;
+  --paper:#fff;--paper-2:#f6f6f7;--line:#e4e4e7;--line-2:#d1d1d6;
+  --night:#0b0b0c;--night-2:#161617;--night-line:#26262a;--night-text:#e8e8ea;--night-muted:#9a9aa1;
+  /* Acento de marca (uso mínimo) */
+  --accent:#ffd500;--accent-soft:rgba(255,213,0,.14);
+  /* Estados */
+  --danger:#b42318;--danger-bg:#fef3f2;--danger-line:#fecdca;
+  --ok:#067647;--ok-bg:#ecfdf3;--ok-line:#abefc6;
+  --focus:#2563eb;
 
-  --fs-xs:.8125rem;  /* 13  etiquetas, notas */
-  --fs-sm:.9375rem;  /* 15  texto secundario */
-  --fs-md:1rem;      /* 16  texto base, campos */
-  --fs-lg:1.25rem;   /* 20  subtítulos */
-  --fs-xl:1.5rem;    /* 24  títulos de sección */
-  --fs-2xl:2rem;     /* 32  títulos principales */
+  /* Tipografía (escala 1.25) */
+  --fs-xs:.8125rem;--fs-sm:.9375rem;--fs-md:1rem;--fs-lg:1.25rem;--fs-xl:1.5rem;--fs-2xl:2rem;
   --lh-text:1.5;--lh-head:1.2;
   --fw-reg:400;--fw-semi:600;--fw-bold:700;
 
+  /* Espaciado (base 8) y formas */
   --s1:.25rem;--s2:.5rem;--s3:.75rem;--s4:1rem;--s5:1.5rem;--s6:2rem;--s7:3rem;
-  --r-sm:8px;--r-md:12px;--r-lg:16px;
-  --control-h:3rem;  /* altura única de campos y botones */
+  --r-sm:8px;--r-md:10px;--r-lg:14px;
+  --control-h:2.75rem;
 }
 *{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:var(--fs-md);line-height:var(--lh-text);color:var(--text);background:var(--bg)}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:var(--fs-md);line-height:var(--lh-text);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
 h1,h2,h3,p{margin:0}
-h1,h2,h3{line-height:var(--lh-head);font-weight:var(--fw-bold)}
-a{color:var(--yellow);font-weight:var(--fw-semi)}
-a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+h1,h2,h3{line-height:var(--lh-head);font-weight:var(--fw-bold);letter-spacing:-.01em}
+a{color:var(--ink);font-weight:var(--fw-semi)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.ic{width:1.25rem;height:1.25rem;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}

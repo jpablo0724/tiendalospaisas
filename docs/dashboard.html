@@ -47,179 +47,197 @@
       </section>
 
       <section class="tools">
-        <input id="q" type="search" placeholder="Buscar imágenes" aria-label="Buscar imágenes">
-        <div class="chips" role="group" aria-label="Categorías">
-          <button type="button" class="chip on" data-cat="">Todas</button>
-          <button type="button" class="chip" data-cat="Productos">Productos</button><button type="button" class="chip" data-cat="Promociones">Promociones</button><button type="button" class="chip" data-cat="Redes sociales">Redes sociales</button><button type="button" class="chip" data-cat="Logos">Logos</button>
+        <div class="search">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input id="q" type="search" placeholder="Buscar por nombre o categoría" aria-label="Buscar imágenes">
+        </div>
+        <div class="filters">
+          <div class="chips" role="group" aria-label="Categorías">
+            <button type="button" class="chip on" data-cat="">Todas</button>
+            <button type="button" class="chip" data-cat="Productos">Productos</button><button type="button" class="chip" data-cat="Promociones">Promociones</button><button type="button" class="chip" data-cat="Redes sociales">Redes sociales</button><button type="button" class="chip" data-cat="Logos">Logos</button>
+          </div>
+          <span class="count" id="count" aria-live="polite">12 imágenes</span>
         </div>
       </section>
 
       <section class="gallery" id="gallery">
         
         <article class="img-card" data-cat="Productos" data-title="imagen 01">
-          <div class="thumb" style="--accent:#ffd500">
+          <div class="thumb">
             <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
           </div>
           <div class="body">
-            <h3>Imagen 01</h3>
-            <p>Productos · JPG</p>
-            <a class="go" href="#">
+            <div class="meta">
+              <h3>Imagen 01</h3>
+              <p>Productos · JPG</p>
+            </div>
+            <a class="go" href="#" aria-label="Descargar Imagen 01" title="Descargar">
               <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
-              Descargar
             </a>
           </div>
         </article>
         
         <article class="img-card" data-cat="Promociones" data-title="imagen 02">
-          <div class="thumb" style="--accent:#1f4fd8">
+          <div class="thumb">
             <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
           </div>
           <div class="body">
-            <h3>Imagen 02</h3>
-            <p>Promociones · PNG</p>
-            <a class="go" href="#">
+            <div class="meta">
+              <h3>Imagen 02</h3>
+              <p>Promociones · PNG</p>
+            </div>
+            <a class="go" href="#" aria-label="Descargar Imagen 02" title="Descargar">
               <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
-              Descargar
             </a>
           </div>
         </article>
         
         <article class="img-card" data-cat="Redes sociales" data-title="imagen 03">
-          <div class="thumb" style="--accent:#e3171e">
+          <div class="thumb">
             <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
           </div>
           <div class="body">
-            <h3>Imagen 03</h3>
-            <p>Redes sociales · JPG</p>
-            <a class="go" href="#">
+            <div class="meta">
+              <h3>Imagen 03</h3>
+              <p>Redes sociales · JPG</p>
+            </div>
+            <a class="go" href="#" aria-label="Descargar Imagen 03" title="Descargar">
               <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
-              Descargar
             </a>
           </div>
         </article>
         
         <article class="img-card" data-cat="Logos" data-title="imagen 04">
-          <div class="thumb" style="--accent:#d9651b">
+          <div class="thumb">
             <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
           </div>
           <div class="body">
-            <h3>Imagen 04</h3>
-            <p>Logos · PNG</p>
-            <a class="go" href="#">
+            <div class="meta">
+              <h3>Imagen 04</h3>
+              <p>Logos · PNG</p>
+            </div>
+            <a class="go" href="#" aria-label="Descargar Imagen 04" title="Descargar">
               <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
-              Descargar
             </a>
           </div>
         </article>
         
         <article class="img-card" data-cat="Productos" data-title="imagen 05">
-          <div class="thumb" style="--accent:#ffd500">
+          <div class="thumb">
             <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
           </div>
           <div class="body">
-            <h3>Imagen 05</h3>
-            <p>Productos · JPG</p>
-            <a class="go" href="#">
+            <div class="meta">
+              <h3>Imagen 05</h3>
+              <p>Productos · JPG</p>
+            </div>
+            <a class="go" href="#" aria-label="Descargar Imagen 05" title="Descargar">
               <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
-              Descargar
             </a>
           </div>
         </article>
         
         <article class="img-card" data-cat="Promociones" data-title="imagen 06">
-          <div class="thumb" style="--accent:#1f4fd8">
+          <div class="thumb">
             <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
           </div>
           <div class="body">
-            <h3>Imagen 06</h3>
-            <p>Promociones · PNG</p>
-            <a class="go" href="#">
+            <div class="meta">
+              <h3>Imagen 06</h3>
+              <p>Promociones · PNG</p>
+            </div>
+            <a class="go" href="#" aria-label="Descargar Imagen 06" title="Descargar">
               <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
-              Descargar
             </a>
           </div>
         </article>
         
         <article class="img-card" data-cat="Redes sociales" data-title="imagen 07">
-          <div class="thumb" style="--accent:#e3171e">
+          <div class="thumb">
             <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
           </div>
           <div class="body">
-            <h3>Imagen 07</h3>
-            <p>Redes sociales · JPG</p>
-            <a class="go" href="#">
+            <div class="meta">
+              <h3>Imagen 07</h3>
+              <p>Redes sociales · JPG</p>
+            </div>
+            <a class="go" href="#" aria-label="Descargar Imagen 07" title="Descargar">
               <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
-              Descargar
             </a>
           </div>
         </article>
         
         <article class="img-card" data-cat="Logos" data-title="imagen 08">
-          <div class="thumb" style="--accent:#d9651b">
+          <div class="thumb">
             <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
           </div>
           <div class="body">
-            <h3>Imagen 08</h3>
-            <p>Logos · PNG</p>
-            <a class="go" href="#">
+            <div class="meta">
+              <h3>Imagen 08</h3>
+              <p>Logos · PNG</p>
+            </div>
+            <a class="go" href="#" aria-label="Descargar Imagen 08" title="Descargar">
               <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
-              Descargar
             </a>
           </div>
         </article>
         
         <article class="img-card" data-cat="Productos" data-title="imagen 09">
-          <div class="thumb" style="--accent:#ffd500">
+          <div class="thumb">
             <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
           </div>
           <div class="body">
-            <h3>Imagen 09</h3>
-            <p>Productos · JPG</p>
-            <a class="go" href="#">
+            <div class="meta">
+              <h3>Imagen 09</h3>
+              <p>Productos · JPG</p>
+            </div>
+            <a class="go" href="#" aria-label="Descargar Imagen 09" title="Descargar">
               <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
-              Descargar
             </a>
           </div>
         </article>
         
         <article class="img-card" data-cat="Promociones" data-title="imagen 10">
-          <div class="thumb" style="--accent:#1f4fd8">
+          <div class="thumb">
             <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
           </div>
           <div class="body">
-            <h3>Imagen 10</h3>
-            <p>Promociones · PNG</p>
-            <a class="go" href="#">
+            <div class="meta">
+              <h3>Imagen 10</h3>
+              <p>Promociones · PNG</p>
+            </div>
+            <a class="go" href="#" aria-label="Descargar Imagen 10" title="Descargar">
               <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
-              Descargar
             </a>
           </div>
         </article>
         
         <article class="img-card" data-cat="Redes sociales" data-title="imagen 11">
-          <div class="thumb" style="--accent:#e3171e">
+          <div class="thumb">
             <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
           </div>
           <div class="body">
-            <h3>Imagen 11</h3>
-            <p>Redes sociales · JPG</p>
-            <a class="go" href="#">
+            <div class="meta">
+              <h3>Imagen 11</h3>
+              <p>Redes sociales · JPG</p>
+            </div>
+            <a class="go" href="#" aria-label="Descargar Imagen 11" title="Descargar">
               <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
-              Descargar
             </a>
           </div>
         </article>
         
         <article class="img-card" data-cat="Logos" data-title="imagen 12">
-          <div class="thumb" style="--accent:#d9651b">
+          <div class="thumb">
             <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
           </div>
           <div class="body">
-            <h3>Imagen 12</h3>
-            <p>Logos · PNG</p>
-            <a class="go" href="#">
+            <div class="meta">
+              <h3>Imagen 12</h3>
+              <p>Logos · PNG</p>
+            </div>
+            <a class="go" href="#" aria-label="Descargar Imagen 12" title="Descargar">
               <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
-              Descargar
             </a>
           </div>
         </article>
@@ -238,6 +256,7 @@
           c.hidden = !ok; if (ok) n++;
         });
         document.getElementById('empty').hidden = n > 0;
+        document.getElementById('count').textContent = n + (n === 1 ? ' imagen' : ' imágenes');
       }
       q.addEventListener('input', apply);
       document.querySelectorAll('.chip').forEach(function (b) {
