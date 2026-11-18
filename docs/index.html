@@ -28,7 +28,7 @@
         
       
       
-<form onsubmit="event.preventDefault();alert('Vista previa: el formulario aún no está conectado.');this.querySelector('button[type=submit]').disabled=false;this.querySelector('button[type=submit]').classList.remove('loading')" novalidate>
+<form onsubmit="event.preventDefault();location.href='dashboard.html';this.querySelector('button[type=submit]').disabled=false;this.querySelector('button[type=submit]').classList.remove('loading')" novalidate>
   <div class="field">
     <label for="email">Correo electrónico</label>
     <input id="email" type="email" name="email" required autofocus autocomplete="email" placeholder="tu@correo.com">

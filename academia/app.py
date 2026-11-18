@@ -163,7 +163,14 @@ def logout():
 @app.route("/dashboard")
 @login_required
 def dashboard():
-    return render_template("dashboard.html")
+    # Datos de ejemplo hasta que exista el módulo de cursos.
+    cursos = [
+        {"titulo": "Atención al cliente", "lecciones": 12, "avance": 65, "icono": "🤝", "color": "#fde8ea"},
+        {"titulo": "Manejo de inventario", "lecciones": 8, "avance": 30, "icono": "📦", "color": "#fff1d6"},
+        {"titulo": "Ventas y marketing", "lecciones": 15, "avance": 100, "icono": "📈", "color": "#e6f5ea"},
+        {"titulo": "Finanzas del negocio", "lecciones": 10, "avance": 0, "icono": "💰", "color": "#e8eefc"},
+    ]
+    return render_template("dashboard.html", cursos=cursos)
 
 
 init_db()

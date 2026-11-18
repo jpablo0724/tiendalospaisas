@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel · Academia Los Paisas</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="app">
+  <aside class="side" id="side">
+    <div class="logo">Los Paisas</div>
+    <nav>
+      <a class="on" href="#">🏠 Inicio</a>
+      <a href="#">📚 Mis cursos</a>
+      <a href="#">🎓 Certificados</a>
+      <a href="#">👤 Perfil</a>
+    </nav>
+    <form method="get" action="login.html">
+      <button type="submit" class="logout">Cerrar sesión</button>
+    </form>
+  </aside>
+
+  <div class="main">
+    <header class="top">
+      <button class="menu" aria-label="Abrir menú" onclick="document.getElementById('side').classList.toggle('open')">☰</button>
+      <div class="user">
+        <span class="avatar">J</span>
+        <span class="uname">Juan Pablo</span>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="welcome">
+        <h1>¡Hola, Juan! 👋</h1>
+        <p>Continúa donde lo dejaste y sigue creciendo tu negocio.</p>
+      </section>
+
+      <section class="stats">
+        <div class="stat"><b>4</b><span>Cursos activos</span></div>
+        <div class="stat"><b>49%</b><span>Progreso promedio</span></div>
+        <div class="stat"><b>1</b><span>Completados</span></div>
+      </section>
+
+      <h2 class="sec">Mis cursos</h2>
+      <section class="courses">
+        
+        <article class="course">
+          <div class="thumb" style="background:#fde8ea">🤝</div>
+          <div class="body">
+            <h3>Atención al cliente</h3>
+            <p>12 lecciones</p>
+            <div class="bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"><i style="width:65%"></i></div>
+            <small>65% completado</small>
+            <a class="go" href="#">Continuar</a>
+          </div>
+        </article>
+        
+        <article class="course">
+          <div class="thumb" style="background:#fff1d6">📦</div>
+          <div class="body">
+            <h3>Manejo de inventario</h3>
+            <p>8 lecciones</p>
+            <div class="bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"><i style="width:30%"></i></div>
+            <small>30% completado</small>
+            <a class="go" href="#">Continuar</a>
+          </div>
+        </article>
+        
+        <article class="course">
+          <div class="thumb" style="background:#e6f5ea">📈</div>
+          <div class="body">
+            <h3>Ventas y marketing</h3>
+            <p>15 lecciones</p>
+            <div class="bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><i style="width:100%"></i></div>
+            <small>100% completado</small>
+            <a class="go" href="#">Repasar</a>
+          </div>
+        </article>
+        
+        <article class="course">
+          <div class="thumb" style="background:#e8eefc">💰</div>
+          <div class="body">
+            <h3>Finanzas del negocio</h3>
+            <p>10 lecciones</p>
+            <div class="bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><i style="width:0%"></i></div>
+            <small>0% completado</small>
+            <a class="go" href="#">Continuar</a>
+          </div>
+        </article>
+        
+      </section>
+    </main>
+  </div>
+</body>
+</html>

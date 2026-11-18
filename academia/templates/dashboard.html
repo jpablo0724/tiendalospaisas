@@ -1,10 +1,63 @@
-{% extends "base.html" %}
-{% block title %}Panel{% endblock %}
-{% block content %}
-<h2>¡Hola, {{ g.user['nombre'] }}!</h2>
-<p>Bienvenido a la academia. Pronto verás aquí tus cursos.</p>
-<form method="post" action="{{ url_for('logout') }}">
-  <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
-  <button type="submit" class="secondary">Cerrar sesión</button>
-</form>
-{% endblock %}
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel · Academia Los Paisas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body class="app">
+  <aside class="side" id="side">
+    <div class="logo">Los Paisas</div>
+    <nav>
+      <a class="on" href="#">🏠 Inicio</a>
+      <a href="#">📚 Mis cursos</a>
+      <a href="#">🎓 Certificados</a>
+      <a href="#">👤 Perfil</a>
+    </nav>
+    <form method="post" action="{{ url_for('logout') }}">
+      <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+      <button type="submit" class="logout">Cerrar sesión</button>
+    </form>
+  </aside>
+
+  <div class="main">
+    <header class="top">
+      <button class="menu" aria-label="Abrir menú" onclick="document.getElementById('side').classList.toggle('open')">☰</button>
+      <div class="user">
+        <span class="avatar">{{ g.user['nombre'][:1]|upper }}</span>
+        <span class="uname">{{ g.user['nombre'] }}</span>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="welcome">
+        <h1>¡Hola, {{ g.user['nombre'].split()[0] }}! 👋</h1>
+        <p>Continúa donde lo dejaste y sigue creciendo tu negocio.</p>
+      </section>
+
+      <section class="stats">
+        <div class="stat"><b>{{ cursos|length }}</b><span>Cursos activos</span></div>
+        <div class="stat"><b>{{ (cursos|sum(attribute='avance') / cursos|length)|round|int }}%</b><span>Progreso promedio</span></div>
+        <div class="stat"><b>{{ cursos|selectattr('avance','equalto',100)|list|length }}</b><span>Completados</span></div>
+      </section>
+
+      <h2 class="sec">Mis cursos</h2>
+      <section class="courses">
+        {% for c in cursos %}
+        <article class="course">
+          <div class="thumb" style="background:{{ c.color }}">{{ c.icono }}</div>
+          <div class="body">
+            <h3>{{ c.titulo }}</h3>
+            <p>{{ c.lecciones }} lecciones</p>
+            <div class="bar" role="progressbar" aria-valuenow="{{ c.avance }}" aria-valuemin="0" aria-valuemax="100"><i style="width:{{ c.avance }}%"></i></div>
+            <small>{{ c.avance }}% completado</small>
+            <a class="go" href="#">{{ 'Repasar' if c.avance == 100 else 'Continuar' }}</a>
+          </div>
+        </article>
+        {% endfor %}
+      </section>
+    </main>
+  </div>
+</body>
+</html>

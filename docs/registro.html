@@ -28,7 +28,7 @@
         
       
       
-<form onsubmit="event.preventDefault();alert('Vista previa: el formulario aún no está conectado.');this.querySelector('button[type=submit]').disabled=false;this.querySelector('button[type=submit]').classList.remove('loading')">
+<form onsubmit="event.preventDefault();location.href='dashboard.html';this.querySelector('button[type=submit]').disabled=false;this.querySelector('button[type=submit]').classList.remove('loading')">
   <div class="field">
     <label for="nombre">Nombre completo</label>
     <input id="nombre" type="text" name="nombre" required autofocus autocomplete="name" placeholder="Tu nombre">
