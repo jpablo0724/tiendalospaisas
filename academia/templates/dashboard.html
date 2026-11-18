@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Panel · Academia Los Paisas</title>
+  <title>Banco de imágenes · Academia Los Paisas</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='tokens.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
 </head>
@@ -11,10 +11,7 @@
   <aside class="side" id="side">
     <img class="logo" src="{{ url_for('static', filename='logo.png') }}" alt="Academia Los Paisas">
     <nav>
-      <a class="on" href="#">🏠 Inicio</a>
-      <a href="#">📚 Mis cursos</a>
-      <a href="#">🎓 Certificados</a>
-      <a href="#">👤 Perfil</a>
+      <a class="on" href="#">🖼️ Banco de imágenes</a>
     </nav>
     <form method="post" action="{{ url_for('logout') }}">
       <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
@@ -33,32 +30,52 @@
 
     <main class="content">
       <section class="welcome">
-        <h1>¡Hola, {{ g.user['nombre'].split()[0] }}! 👋</h1>
-        <p>Continúa donde lo dejaste y sigue creciendo tu negocio.</p>
+        <h1>Banco de imágenes</h1>
+        <p>Encuentra y descarga imágenes para tus ventas y publicaciones.</p>
       </section>
 
-      <section class="stats">
-        <div class="stat"><b>{{ cursos|length }}</b><span>Cursos activos</span></div>
-        <div class="stat"><b>{{ (cursos|sum(attribute='avance') / cursos|length)|round|int }}%</b><span>Progreso promedio</span></div>
-        <div class="stat"><b>{{ cursos|selectattr('avance','equalto',100)|list|length }}</b><span>Completados</span></div>
+      <section class="tools">
+        <input id="q" type="search" placeholder="Buscar imágenes…" aria-label="Buscar imágenes">
+        <div class="chips" role="group" aria-label="Categorías">
+          <button type="button" class="chip on" data-cat="">Todas</button>
+          {% for c in categorias %}<button type="button" class="chip" data-cat="{{ c }}">{{ c }}</button>{% endfor %}
+        </div>
       </section>
 
-      <h2 class="sec">Mis cursos</h2>
-      <section class="courses">
-        {% for c in cursos %}
-        <article class="course">
-          <div class="thumb" style="background:{{ c.color }}">{{ c.icono }}</div>
+      <section class="gallery" id="gallery">
+        {% for im in imagenes %}
+        <article class="img-card" data-cat="{{ im.categoria }}" data-title="{{ im.titulo|lower }}">
+          <div class="thumb" style="background:{{ im.color }}">🖼️</div>
           <div class="body">
-            <h3>{{ c.titulo }}</h3>
-            <p>{{ c.lecciones }} lecciones</p>
-            <div class="bar" role="progressbar" aria-valuenow="{{ c.avance }}" aria-valuemin="0" aria-valuemax="100"><i style="width:{{ c.avance }}%"></i></div>
-            <small>{{ c.avance }}% completado</small>
-            <a class="go" href="#">{{ 'Repasar' if c.avance == 100 else 'Continuar' }}</a>
+            <h3>{{ im.titulo }}</h3>
+            <p>{{ im.categoria }} · {{ im.formato }}</p>
+            <a class="go" href="#">Descargar</a>
           </div>
         </article>
         {% endfor %}
+        <p class="empty" id="empty" hidden>No encontramos imágenes con ese criterio.</p>
       </section>
     </main>
   </div>
+  <script>
+    (function () {
+      var cat = '', q = document.getElementById('q');
+      function apply() {
+        var n = 0, t = q.value.trim().toLowerCase();
+        document.querySelectorAll('.img-card').forEach(function (c) {
+          var ok = (!cat || c.dataset.cat === cat) && (!t || c.dataset.title.indexOf(t) > -1 || c.dataset.cat.toLowerCase().indexOf(t) > -1);
+          c.hidden = !ok; if (ok) n++;
+        });
+        document.getElementById('empty').hidden = n > 0;
+      }
+      q.addEventListener('input', apply);
+      document.querySelectorAll('.chip').forEach(function (b) {
+        b.addEventListener('click', function () {
+          document.querySelectorAll('.chip').forEach(function (x) { x.classList.remove('on'); });
+          b.classList.add('on'); cat = b.dataset.cat; apply();
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

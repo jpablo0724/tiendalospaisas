@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Panel · Academia Los Paisas</title>
+  <title>Banco de imágenes · Academia Los Paisas</title>
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="dashboard.css">
 </head>
@@ -11,10 +11,7 @@
   <aside class="side" id="side">
     <img class="logo" src="logo.png" alt="Academia Los Paisas">
     <nav>
-      <a class="on" href="#">🏠 Inicio</a>
-      <a href="#">📚 Mis cursos</a>
-      <a href="#">🎓 Certificados</a>
-      <a href="#">👤 Perfil</a>
+      <a class="on" href="#">🖼️ Banco de imágenes</a>
     </nav>
     <form method="get" action="login.html">
       <button type="submit" class="logout">Cerrar sesión</button>
@@ -32,65 +29,151 @@
 
     <main class="content">
       <section class="welcome">
-        <h1>¡Hola, Juan! 👋</h1>
-        <p>Continúa donde lo dejaste y sigue creciendo tu negocio.</p>
+        <h1>Banco de imágenes</h1>
+        <p>Encuentra y descarga imágenes para tus ventas y publicaciones.</p>
       </section>
 
-      <section class="stats">
-        <div class="stat"><b>4</b><span>Cursos activos</span></div>
-        <div class="stat"><b>49%</b><span>Progreso promedio</span></div>
-        <div class="stat"><b>1</b><span>Completados</span></div>
+      <section class="tools">
+        <input id="q" type="search" placeholder="Buscar imágenes…" aria-label="Buscar imágenes">
+        <div class="chips" role="group" aria-label="Categorías">
+          <button type="button" class="chip on" data-cat="">Todas</button>
+          <button type="button" class="chip" data-cat="Productos">Productos</button><button type="button" class="chip" data-cat="Promociones">Promociones</button><button type="button" class="chip" data-cat="Redes sociales">Redes sociales</button><button type="button" class="chip" data-cat="Logos">Logos</button>
+        </div>
       </section>
 
-      <h2 class="sec">Mis cursos</h2>
-      <section class="courses">
+      <section class="gallery" id="gallery">
         
-        <article class="course">
-          <div class="thumb" style="background:#e3171e">🤝</div>
+        <article class="img-card" data-cat="Productos" data-title="imagen 01">
+          <div class="thumb" style="background:#ffd500">🖼️</div>
           <div class="body">
-            <h3>Atención al cliente</h3>
-            <p>12 lecciones</p>
-            <div class="bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"><i style="width:65%"></i></div>
-            <small>65% completado</small>
-            <a class="go" href="#">Continuar</a>
+            <h3>Imagen 01</h3>
+            <p>Productos · JPG</p>
+            <a class="go" href="#">Descargar</a>
           </div>
         </article>
         
-        <article class="course">
-          <div class="thumb" style="background:#d9651b">📦</div>
+        <article class="img-card" data-cat="Promociones" data-title="imagen 02">
+          <div class="thumb" style="background:#1f4fd8">🖼️</div>
           <div class="body">
-            <h3>Manejo de inventario</h3>
-            <p>8 lecciones</p>
-            <div class="bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"><i style="width:30%"></i></div>
-            <small>30% completado</small>
-            <a class="go" href="#">Continuar</a>
+            <h3>Imagen 02</h3>
+            <p>Promociones · PNG</p>
+            <a class="go" href="#">Descargar</a>
           </div>
         </article>
         
-        <article class="course">
-          <div class="thumb" style="background:#ffd500">📈</div>
+        <article class="img-card" data-cat="Redes sociales" data-title="imagen 03">
+          <div class="thumb" style="background:#e3171e">🖼️</div>
           <div class="body">
-            <h3>Ventas y marketing</h3>
-            <p>15 lecciones</p>
-            <div class="bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><i style="width:100%"></i></div>
-            <small>100% completado</small>
-            <a class="go" href="#">Repasar</a>
+            <h3>Imagen 03</h3>
+            <p>Redes sociales · JPG</p>
+            <a class="go" href="#">Descargar</a>
           </div>
         </article>
         
-        <article class="course">
-          <div class="thumb" style="background:#1f4fd8">💰</div>
+        <article class="img-card" data-cat="Logos" data-title="imagen 04">
+          <div class="thumb" style="background:#d9651b">🖼️</div>
           <div class="body">
-            <h3>Finanzas del negocio</h3>
-            <p>10 lecciones</p>
-            <div class="bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><i style="width:0%"></i></div>
-            <small>0% completado</small>
-            <a class="go" href="#">Continuar</a>
+            <h3>Imagen 04</h3>
+            <p>Logos · PNG</p>
+            <a class="go" href="#">Descargar</a>
           </div>
         </article>
         
+        <article class="img-card" data-cat="Productos" data-title="imagen 05">
+          <div class="thumb" style="background:#ffd500">🖼️</div>
+          <div class="body">
+            <h3>Imagen 05</h3>
+            <p>Productos · JPG</p>
+            <a class="go" href="#">Descargar</a>
+          </div>
+        </article>
+        
+        <article class="img-card" data-cat="Promociones" data-title="imagen 06">
+          <div class="thumb" style="background:#1f4fd8">🖼️</div>
+          <div class="body">
+            <h3>Imagen 06</h3>
+            <p>Promociones · PNG</p>
+            <a class="go" href="#">Descargar</a>
+          </div>
+        </article>
+        
+        <article class="img-card" data-cat="Redes sociales" data-title="imagen 07">
+          <div class="thumb" style="background:#e3171e">🖼️</div>
+          <div class="body">
+            <h3>Imagen 07</h3>
+            <p>Redes sociales · JPG</p>
+            <a class="go" href="#">Descargar</a>
+          </div>
+        </article>
+        
+        <article class="img-card" data-cat="Logos" data-title="imagen 08">
+          <div class="thumb" style="background:#d9651b">🖼️</div>
+          <div class="body">
+            <h3>Imagen 08</h3>
+            <p>Logos · PNG</p>
+            <a class="go" href="#">Descargar</a>
+          </div>
+        </article>
+        
+        <article class="img-card" data-cat="Productos" data-title="imagen 09">
+          <div class="thumb" style="background:#ffd500">🖼️</div>
+          <div class="body">
+            <h3>Imagen 09</h3>
+            <p>Productos · JPG</p>
+            <a class="go" href="#">Descargar</a>
+          </div>
+        </article>
+        
+        <article class="img-card" data-cat="Promociones" data-title="imagen 10">
+          <div class="thumb" style="background:#1f4fd8">🖼️</div>
+          <div class="body">
+            <h3>Imagen 10</h3>
+            <p>Promociones · PNG</p>
+            <a class="go" href="#">Descargar</a>
+          </div>
+        </article>
+        
+        <article class="img-card" data-cat="Redes sociales" data-title="imagen 11">
+          <div class="thumb" style="background:#e3171e">🖼️</div>
+          <div class="body">
+            <h3>Imagen 11</h3>
+            <p>Redes sociales · JPG</p>
+            <a class="go" href="#">Descargar</a>
+          </div>
+        </article>
+        
+        <article class="img-card" data-cat="Logos" data-title="imagen 12">
+          <div class="thumb" style="background:#d9651b">🖼️</div>
+          <div class="body">
+            <h3>Imagen 12</h3>
+            <p>Logos · PNG</p>
+            <a class="go" href="#">Descargar</a>
+          </div>
+        </article>
+        
+        <p class="empty" id="empty" hidden>No encontramos imágenes con ese criterio.</p>
       </section>
     </main>
   </div>
+  <script>
+    (function () {
+      var cat = '', q = document.getElementById('q');
+      function apply() {
+        var n = 0, t = q.value.trim().toLowerCase();
+        document.querySelectorAll('.img-card').forEach(function (c) {
+          var ok = (!cat || c.dataset.cat === cat) && (!t || c.dataset.title.indexOf(t) > -1 || c.dataset.cat.toLowerCase().indexOf(t) > -1);
+          c.hidden = !ok; if (ok) n++;
+        });
+        document.getElementById('empty').hidden = n > 0;
+      }
+      q.addEventListener('input', apply);
+      document.querySelectorAll('.chip').forEach(function (b) {
+        b.addEventListener('click', function () {
+          document.querySelectorAll('.chip').forEach(function (x) { x.classList.remove('on'); });
+          b.classList.add('on'); cat = b.dataset.cat; apply();
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
