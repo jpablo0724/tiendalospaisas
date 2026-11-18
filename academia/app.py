@@ -165,10 +165,10 @@ def logout():
 def dashboard():
     # Datos de ejemplo hasta que exista el módulo de cursos.
     cursos = [
-        {"titulo": "Atención al cliente", "lecciones": 12, "avance": 65, "icono": "🤝", "color": "#fde8ea"},
-        {"titulo": "Manejo de inventario", "lecciones": 8, "avance": 30, "icono": "📦", "color": "#fff1d6"},
-        {"titulo": "Ventas y marketing", "lecciones": 15, "avance": 100, "icono": "📈", "color": "#e6f5ea"},
-        {"titulo": "Finanzas del negocio", "lecciones": 10, "avance": 0, "icono": "💰", "color": "#e8eefc"},
+        {"titulo": "Atención al cliente", "lecciones": 12, "avance": 65, "icono": "🤝", "color": "#e3171e"},
+        {"titulo": "Manejo de inventario", "lecciones": 8, "avance": 30, "icono": "📦", "color": "#d9651b"},
+        {"titulo": "Ventas y marketing", "lecciones": 15, "avance": 100, "icono": "📈", "color": "#ffd500"},
+        {"titulo": "Finanzas del negocio", "lecciones": 10, "avance": 0, "icono": "💰", "color": "#1f4fd8"},
     ]
     return render_template("dashboard.html", cursos=cursos)
 
