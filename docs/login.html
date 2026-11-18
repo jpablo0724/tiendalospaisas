@@ -9,7 +9,7 @@
 <body class="auth">
   <aside class="hero">
     <div class="hero-inner">
-      <div class="logo">Los Paisas</div>
+      <img class="logo-img" src="logo.jpg" alt="Academia Los Paisas">
       <h2>Aprende, crece y vende más.</h2>
       <p>Tu academia de la Tienda Los Paisas: cursos, lecciones y todo tu progreso en un solo lugar.</p>
       <ul>
@@ -21,14 +21,14 @@
   </aside>
   <main class="panel">
     <div class="form-wrap">
-      <h1 class="brand">Academia <span>Los Paisas</span></h1>
+      <img class="logo-sm" src="logo.jpg" alt="Academia Los Paisas">
       <h2 class="title">Bienvenido de nuevo</h2>
       <p class="sub">Ingresa con tu correo y contraseña para continuar.</p>
       
         
       
       
-<form onsubmit="event.preventDefault();location.href='dashboard.html';this.querySelector('button[type=submit]').disabled=false;this.querySelector('button[type=submit]').classList.remove('loading')" novalidate>
+<form onsubmit="event.preventDefault();location.href='dashboard.html';" novalidate>
   <div class="field">
     <label for="email">Correo electrónico</label>
     <input id="email" type="email" name="email" required autofocus autocomplete="email" placeholder="tu@correo.com">

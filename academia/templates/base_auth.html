@@ -9,7 +9,7 @@
 <body class="auth">
   <aside class="hero">
     <div class="hero-inner">
-      <div class="logo">Los Paisas</div>
+      <img class="logo-img" src="{{ url_for('static', filename='logo.jpg') }}" alt="Academia Los Paisas">
       <h2>Aprende, crece y vende más.</h2>
       <p>Tu academia de la Tienda Los Paisas: cursos, lecciones y todo tu progreso en un solo lugar.</p>
       <ul>
@@ -21,7 +21,7 @@
   </aside>
   <main class="panel">
     <div class="form-wrap">
-      <h1 class="brand">Academia <span>Los Paisas</span></h1>
+      <img class="logo-sm" src="{{ url_for('static', filename='logo.jpg') }}" alt="Academia Los Paisas">
       <h2 class="title">{% block heading %}{% endblock %}</h2>
       <p class="sub">{% block sub %}{% endblock %}</p>
       {% with msgs = get_flashed_messages(with_categories=true) %}
