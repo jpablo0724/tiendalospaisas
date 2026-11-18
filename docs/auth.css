@@ -4,7 +4,7 @@ body.auth{margin:0;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;f
 .hero{display:flex;align-items:center;justify-content:center;padding:3rem;background:radial-gradient(circle at 50% 35%,#1a1a1a 0%,#000 70%);border-right:1px solid var(--line);position:relative}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--yellow) 50%,var(--blue) 50% 75%,var(--red) 75%)}
 .hero-inner{max-width:440px;text-align:center}
-.logo-img{width:min(300px,70%);height:auto;margin-bottom:1.5rem;filter:drop-shadow(0 10px 30px rgba(255,213,0,.15))}
+.logo-img{width:150px;height:auto;margin-bottom:1.5rem}
 .hero h2{font-size:2rem;line-height:1.15;margin:0 0 1rem}
 .hero p{color:var(--muted);line-height:1.55;margin:0 0 1.5rem}
 .hero ul{list-style:none;padding:0;margin:0;display:grid;gap:.7rem;text-align:left;display:inline-grid}
@@ -12,7 +12,7 @@ body.auth{margin:0;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;f
 .hero li::before{content:"✓";position:absolute;left:0;font-weight:800;color:var(--yellow)}
 .panel{display:flex;align-items:center;justify-content:center;padding:2rem 1.25rem;background:var(--bg)}
 .form-wrap{width:100%;max-width:400px}
-.logo-sm{display:none;width:110px;margin:0 auto 1rem}
+.logo-sm{display:none;width:80px;margin:0 auto 1rem}
 .title{font-size:1.9rem;margin:0 0 .3rem}
 .sub{color:var(--muted);margin:0 0 1.6rem}
 .field{margin-bottom:1.1rem}

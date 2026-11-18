@@ -2,7 +2,7 @@
 *{box-sizing:border-box}
 body.app{margin:0;display:grid;grid-template-columns:230px 1fr;min-height:100vh;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);background:var(--bg)}
 .side{background:#0a0a0a;border-right:1px solid var(--line);padding:1.5rem 1rem;display:flex;flex-direction:column;gap:1.5rem;position:sticky;top:0;height:100vh}
-.logo{width:120px;height:auto;align-self:center}
+.logo{width:80px;height:auto;align-self:center}
 .side nav{display:grid;gap:.25rem;flex:1;align-content:start}
 .side nav a{padding:.65rem .8rem;border-radius:10px;text-decoration:none;color:#eee;font-weight:600}
 .side nav a:hover{background:#1c1c1c}
