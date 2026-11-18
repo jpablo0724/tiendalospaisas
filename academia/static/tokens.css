@@ -1,0 +1,25 @@
+/* Sistema de diseño compartido: colores, escala tipográfica (1.25), espaciado (base 8) y radios. */
+:root{
+  --yellow:#ffd500;--yellow-h:#ffe34d;--blue:#1f4fd8;--red:#e3171e;--orange:#d9651b;
+  --bg:#000;--surface:#0e0e0e;--field:#171717;--line:#2a2a2a;
+  --text:#fff;--text-2:#d4d4d4;--muted:#a3a3a3;
+
+  --fs-xs:.8125rem;  /* 13  etiquetas, notas */
+  --fs-sm:.9375rem;  /* 15  texto secundario */
+  --fs-md:1rem;      /* 16  texto base, campos */
+  --fs-lg:1.25rem;   /* 20  subtítulos */
+  --fs-xl:1.5rem;    /* 24  títulos de sección */
+  --fs-2xl:2rem;     /* 32  títulos principales */
+  --lh-text:1.5;--lh-head:1.2;
+  --fw-reg:400;--fw-semi:600;--fw-bold:700;
+
+  --s1:.25rem;--s2:.5rem;--s3:.75rem;--s4:1rem;--s5:1.5rem;--s6:2rem;--s7:3rem;
+  --r-sm:8px;--r-md:12px;--r-lg:16px;
+  --control-h:3rem;  /* altura única de campos y botones */
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:var(--fs-md);line-height:var(--lh-text);color:var(--text);background:var(--bg)}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{line-height:var(--lh-head);font-weight:var(--fw-bold)}
+a{color:var(--yellow);font-weight:var(--fw-semi)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
